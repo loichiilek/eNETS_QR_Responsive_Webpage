@@ -1,0 +1,48 @@
+body {
+  background: #f7fbff;
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+  font-weight: bold;
+  text-align: center;
+  margin: 50px auto;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.data-input {
+  margin: auto;
+  max-width: 500px;
+}
+
+.table {
+  font-size: 13px;
+}
+
+
+.table>tbody>tr>td>label {
+  margin-top: 7px;
+}
+
+.container-result {
+  margin: auto;
+  text-align: center;
+}
+
+.button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#result_image {
+  margin: 10px auto;
+}
+
+#payment_image {
+  image-resolution:
+}
