@@ -54,7 +54,7 @@
       </div>
     </div>
     <div class="container container-result">
-      <button class="button" align="center">Generate QR</button>
+      <button class="btn btn-primary" align="center">Generate QR</button>
       <div id="payment_image"></div>
       <div id="result_image"></div>
     </div>
@@ -97,7 +97,7 @@
               console.log(result);
               json_result = jQuery.parseJSON(result)
               qrCode = json_result.txn_identifier;
-              $('#payment_image').html('<img class="hidden-xs" height="180" width="180" src="data:image/png;base64,' + json_result.qr_code + '" /> <a href="netspay://payment/?source=com.nets.netspay&amp;urlscheme=netspay&amp;qrdata=' + encodeURIComponent(qrCode) + '"> <img class="hidden-md hidden-lg height="180" width="180" " src="http://35.186.150.91/images/netspay.png" /></a>');
+              $('#payment_image').html('<img class="hidden-xs" height="180" width="180" src="data:image/png;base64,' + json_result.qr_code + '" /> <a href="netspay://payment/?source=com.nets.netspay&amp;urlscheme=netspay&amp;qrdata=' + encodeURIComponent(qrCode) + '"> <img class="hidden-md hidden-lg height="180" width="180" " src="./assets/images/netspay.png" /></a>');
               setTimeout(function() {
                 query_function();
               }, 10000);
