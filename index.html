@@ -14,7 +14,8 @@
   <div class="container">
     <div>
       <header>
-        <h1>eNETS QR Responsive Demo</h1>
+        <h1 class="hidden-xs">eNETS QR Responsive Demo</h1>
+        <h3 class="visible-xs">eNETS QR Responsive Demo</h3>
       </header>
       <div class="data-input">
         <table class="table table-condensed" align="center">
@@ -108,7 +109,9 @@
               alert(error_message);
             }
           });
+
           var inquiryCount = 1;
+
           data2 = JSON.stringify({"mti":"0100","process_code":"330000","stan":stan,"transaction_time":"180647","transaction_date":"0313","entry_mode":"000","condition_code":"85","institution_code":"20000000001","host_tid":tid,"host_mid":mid,"npx_data":{"E103":tid,"E201":"00000123","E202":"SGD"},"txn_identifier":qrCode});
           sign = btoa(sha256(data2+apiSecret).match(/\w{2}/g).map(a => String.fromCharCode(parseInt(a, 16))).join(''));
           query_function = (function() {

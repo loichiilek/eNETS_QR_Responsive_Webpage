@@ -6,10 +6,20 @@ body {
 header {
   font-weight: bold;
   text-align: center;
-  margin: 50px auto;
+  margin: 30px auto;
 }
 
-h4 {
+header>h1{
+  font-weight: bold;
+  margin: 40px;
+}
+
+header>h3{
+  font-weight: bold;
+  margin: 0;
+}
+
+#result_image>h4 {
   font-weight: bold;
   font-size: 14px;
   font-style: italic;
