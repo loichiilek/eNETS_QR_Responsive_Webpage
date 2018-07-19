@@ -1,12 +1,12 @@
 body {
-  background: #f7fbff;
-  font-family: 'Lato', sans-serif;
+  background: #f7fbff !important;
+  font-family: 'Lato', sans-serif !important;
 }
 
 header {
-  font-weight: bold;
-  text-align: center;
-  margin: 30px auto;
+  font-weight: bold !important;
+  text-align: center !important;
+  margin: 30px auto !important;
 }
 
 header>h1{
@@ -16,7 +16,7 @@ header>h1{
 
 header>h3{
   font-weight: bold;
-  margin: 0;
+  margin: 20px;
 }
 
 #result_image>h4 {
@@ -27,7 +27,7 @@ header>h3{
 
 .data-input {
   margin: auto;
-  max-width: 500px;
+  max-width: 700px;
 }
 
 .table {
@@ -55,4 +55,49 @@ header>h3{
 
 #payment_image {
   image-resolution:
+}
+
+#radioBtn {
+  margin: 2.2px 0;
+}
+
+#radioBtn .notActive{
+    color: #000;
+    background-color: #fff;
+    border-color: #ccc;
+    /* border: 1px solid #ccc; */
+    margin: 0;
+}
+
+#radioBtn>.btn-primary.active {
+  background-color: #337ab7;
+  border-color: #286090;
+  /* border: 1px solid #ccc; */
+  box-shadow: inset 0px 0px 5px 3px rgba(0,0,0,.125);
+  margin: 0;
+}
+
+.payment-section {
+
+  margin: 20px auto;
+  width: 80%;
+}
+
+.payment-section>fieldset>#ajaxResponse>.container {
+  width: inherit;
+}
+
+.payment-section>fieldset>#ajaxResponse>.container>#testForm>.form-group>div {
+  display: inline-block;
+  float: none;
+}
+
+#hmac {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#hmac>#hmac-text {
+  width: 70%;
+  margin-right: 20px;
 }

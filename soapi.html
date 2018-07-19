@@ -1,0 +1,106 @@
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Credit eNETS</title>
+  <!-- style -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="unique-class">
+    <div class="container">
+      <div>
+        <header>
+          <ul class="nav nav-tabs">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="nps.html">NPS</a></li>
+            <li class="active"><a href="soapi.html">SOAPI</a></li>
+            <li><a href="hmac.html">HMAC</a></li>
+          </ul>
+          <h1 class="hidden-xs">eNETS Credit Responsive Demo</h1>
+          <h3 class="visible-xs">eNETS Credit Responsive Demo</h3>
+        </header>
+        <div class="data-input">
+          <table class="table table-condensed" align="center">
+            <thead>
+              <tr>
+                <th>Fields</th>
+                <th>Input</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><label>Amount (Cents) </label></td>
+                <td><input class="form-control" type="text" size="40" id="amount" value="1000"></td>
+              </tr>
+              <tr>
+                <td><label>UMID </label></td>
+                <td><input class="form-control" type="text" id="umid" value="UMID_877772003"></td>
+              </tr>
+              <tr>
+                <td><label>API Key </label></td>
+                <td><input class="form-control" type="text" id="apiKey" value="154eb31c-0f72-45bb-9249-84a1036fd1ca"></td>
+              </tr>
+              <tr>
+                <td><label>Secret Key </label></td>
+                <td><input class="form-control" type="text" id="secretKey" value="38a4b473-0295-439d-92e1-ad26a8c60279"></td>
+              </tr>
+              <tr>
+                <td><label>Mode </label></td>
+                <td>
+                  <div id="radioBtn" class="btn-group">
+                    <a class="btn btn-primary btn-sm active" data-toggle="mode" data-title="UAT">UAT</a>
+                    <a class="btn btn-primary btn-sm notActive" data-toggle="mode" data-title="Production">Production</a>
+                  </div>
+                  <input type="hidden" name="mode" id="mode">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="container container-result">
+
+        <!-- <div>
+          <div id="radioBtn" class="btn-group">
+            <a class="btn btn-primary btn-sm active" data-toggle="mode" data-title="UAT">UAT</a>
+            <a class="btn btn-primary btn-sm notActive" data-toggle="mode" data-title="Production">Production</a>
+          </div>
+          <input type="hidden" name="mode" id="mode">
+        </div> -->
+        <button class="btn btn-primary" align="center">Send Payload</button>
+        <div class="payment-section">
+          <fieldset>
+              <div id="ajaxResponse"></div>
+          </fieldset>
+        </div>
+      </div>
+
+
+      <script src="assets/js/jquery-1.12.4.min.js"></script>
+      <script src="assets/js/bootstrap.min.js"></script>
+      <script src="assets/js/sha256.js"></script>
+      <script src="assets/js/moment.js"></script>
+      <script src="assets/js/soapi.js"></script>
+      <!-- <script src="https://uat2.enets.sg/GW2/pluginpages/env.jsp"></script>
+      <script type="text/javascript" src="https://uat2.enets.sg/GW2/js/apps.js"></script> -->
+      <script type="text/javascript">
+        $('#radioBtn a').on('click', function(){
+          var sel = $(this).data('title');
+          var tog = $(this).data('toggle');
+          $('#'+tog).prop('value', sel);
+
+          $('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
+          $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
+        })
+      </script>
+    </div>
+  </div>
+
+</body>
+
+</html>
