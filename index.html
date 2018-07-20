@@ -14,42 +14,39 @@
   <script src="assets/js/jquery-1.12.4.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
 </head>
-
 <body>
   <header>
     <ul class="nav nav-tabs">
-      <li class="active"><a href="index.html">Home <i class="fa fa-home"></i></a></li>
-      <li><a href="nps.html">NPS <i class="fa fa-qrcode"></i></a></li>
-      <li><a href="soapi.html">SOAPI <i class="fa fa-credit-card"></i></a></li>
-      <li><a href="hmac.html">HMAC <i class="fa fa-key"></i></a></li>
-      <li class="nav-tabs-right"><a href="https://test.enets.sg/umapi/merchsim.html">UMAPI <i class="fa fa-external-link"></i></a></li>
+      <li class="active"><a href="index.html">Home <i class="fa fa-home hidden-xs"></i></a></li>
+      <li><a href="nps.html">NPS <i class="fa fa-qrcode hidden-xs"></i></a></li>
+      <li><a href="soapi.html">SOAPI <i class="fa fa-credit-card hidden-xs"></i></a></li>
+      <li><a href="hmac.html">HMAC <i class="fa fa-calculator hidden-xs"></i></a></li>
+      <li class="nav-tabs-right hidden-xs"><a href="https://test.enets.sg/umapi/merchsim.html">UMAPI <i class="fa fa-external-link hidden-xs"></i></a></li>
     </ul>
   </header>
   <div class="container-fluid">
     <div class="container">
       <h1 class="hidden-xs">eNETS Demo</h1>
       <h3 class="visible-xs">eNETS Demo</h3>
-      <div>
-
-        <div class="row">
-          <div class="col-sm-3">
-          </div>
-          <div class="col-sm-3">
-          </div>
-          <div class="col-sm-3">
-          </div>
-          <div class="col-sm-3">
-          </div>
+      <div id="index" class="row">
+        <div class="col-xs-12 col-sm-4">
+          <img src="https://www.nets.com.sg/assets/images/uploads/eNETS_Thumb_800x800.jpg" alt="nets">
+        </div>
+        <div class="col-xs-12 col-sm-8">
+          <h4>Read Me <i class="fa fa-smile-o"></i></h4>
+          <h6>This interactive site was created to demostrate the function of each of the eNETS API. The code can be used as reference, but should not be copied line for line. The decrepencies lie in the lack of a backend implementation where secret key and other confidential information should be stored and processed. For a comprehensive integration guide, please visit our <a href="https://api-developer.nets.com.sg/">developer's portal</a>.</h6>
         </div>
       </div>
     </div>
   </div>
+
   <footer class="footer">
     <div class="container">
       <div class="row">
         <div class="col-xs-4">
           <div id="repository">
-            <a href="https://github.com/loichiilek/loichiilek.github.io">Project Repository <i class="fa fa-github"></i></a>
+            <a class="hidden-xs" href="https://github.com/loichiilek/loichiilek.github.io">Project Repository <i class="fa fa-github"></i></a>
+            <a class="visible-xs" href="https://github.com/loichiilek/loichiilek.github.io">Github <i class="fa fa-github"></i></a>
           </div>
 
         </div>
@@ -61,7 +58,7 @@
       </div>
     </div>
   </footer>
-
 </body>
+
 
 </html>

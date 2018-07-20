@@ -17,9 +17,14 @@ a {
   transition: all 0.33s;
 }
 
+img {
+  max-width: 100%;
+}
+
 a:hover {
-  color: #000;
-  text-decoration: none;
+  color: #000 !important;
+  text-decoration: none !important;
+  font-weight: bold !important;
 }
 
 .nav {
@@ -47,12 +52,30 @@ a:hover {
   font-weight: bold;
   margin: 40px;
   text-align: center;
+  color: #333;
 }
 
 .container>h3{
   font-weight: bold;
   margin: 20px;
   text-align: center;
+  color: #333;
+}
+
+#index {
+  margin: 20px auto;
+}
+
+#index {
+  margin: 20px auto;
+}
+
+h6>a {
+  font-weight: bold;
+}
+
+h6>a:hover {
+  text-decoration: underline;
 }
 
 body>.container-fluid {
@@ -62,11 +85,12 @@ body>.container-fluid {
 
 .nav-tabs>li>a:hover, .nav-tabs>li>a:focus{
   background: #fdfdfe;
-  color: #586069;
+  color: #000;
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
   background: #fff;
+  color: #000;
 }
 
 #result_image>h4 {
@@ -82,6 +106,7 @@ body>.container-fluid {
 
 .table {
   font-size: 13px;
+  margin-bottom: 0;
 }
 
 
