@@ -7,7 +7,6 @@ $(document).ready(function() {
     var apikey = $('#apiKey').val();
     var apiSecret = $('#secretKey').val();
     var dt = new Date();
-    // var transaction_time = "" + dt.getHours() + dt.getMinutes() + dt.getSeconds();
     var merchantTxnDtm = moment().format('YYYYMMDD hh:mm:ss.SSS');
     var merchantTxnRef = moment().format('YYYYMMDD hh:mm:ss');
 
@@ -29,7 +28,14 @@ $(document).ready(function() {
 
     } else if ($('#mode').val() == "Production") {
       console.log($('#mode').val())
+      script1.src = 'https://www2.enets.sg/GW2/pluginpages/env.jsp';
+      document.getElementsByTagName('head')[0].appendChild(script1);
 
+      script1.onload = function() {
+        script2.src = 'https://www2.enets.sg/GW2/js/apps.js';
+        script2.type = 'text/javascript';
+        document.getElementsByTagName('head')[0].appendChild(script2);
+      };
     }
 
 
@@ -44,6 +50,7 @@ $(document).ready(function() {
     script2.onload = function() {
       sendPayLoad(data, sign, apikey);
     };
+    $(this).hide();
 
   });
 });

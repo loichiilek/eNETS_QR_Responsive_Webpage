@@ -8,22 +8,32 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+  <!-- script -->
+  <script src="assets/js/jquery-1.12.4.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/sha256.js"></script>
+  <script src="assets/js/moment.js"></script>
+  <script src="assets/js/soapi.js"></script>
 </head>
 
 <body>
-  <div class="unique-class">
+  <header>
+    <ul class="nav nav-tabs">
+      <li><a href="index.html">Home <i class="fa fa-home"></i></a></li>
+      <li><a href="nps.html">NPS <i class="fa fa-qrcode"></i></a></li>
+      <li class="active"><a href="soapi.html">SOAPI <i class="fa fa-credit-card"></i></a></li>
+      <li><a href="hmac.html">HMAC <i class="fa fa-key"></i></a></li>
+      <li class="nav-tabs-right"><a href="https://test.enets.sg/umapi/merchsim.html">UMAPI <i class="fa fa-external-link"></i></a></li>
+    </ul>
+
+  </header>
+  <div class="container-fluid">
     <div class="container">
+      <h1 class="hidden-xs">eNETS Credit Responsive Demo</h1>
+      <h3 class="visible-xs">eNETS Credit Responsive Demo</h3>
       <div>
-        <header>
-          <ul class="nav nav-tabs">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="nps.html">NPS</a></li>
-            <li class="active"><a href="soapi.html">SOAPI</a></li>
-            <li><a href="hmac.html">HMAC</a></li>
-          </ul>
-          <h1 class="hidden-xs">eNETS Credit Responsive Demo</h1>
-          <h3 class="visible-xs">eNETS Credit Responsive Demo</h3>
-        </header>
+
         <div class="data-input">
           <table class="table table-condensed" align="center">
             <thead>
@@ -81,13 +91,7 @@
       </div>
 
 
-      <script src="assets/js/jquery-1.12.4.min.js"></script>
-      <script src="assets/js/bootstrap.min.js"></script>
-      <script src="assets/js/sha256.js"></script>
-      <script src="assets/js/moment.js"></script>
-      <script src="assets/js/soapi.js"></script>
-      <!-- <script src="https://uat2.enets.sg/GW2/pluginpages/env.jsp"></script>
-      <script type="text/javascript" src="https://uat2.enets.sg/GW2/js/apps.js"></script> -->
+
       <script type="text/javascript">
         $('#radioBtn a').on('click', function(){
           var sel = $(this).data('title');
@@ -100,7 +104,23 @@
       </script>
     </div>
   </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4">
+          <div id="repository">
+            <a href="https://github.com/loichiilek/loichiilek.github.io">Project Repository <i class="fa fa-github"></i></a>
+          </div>
 
+        </div>
+        <div class="col-xs-8">
+          <div id="nets">
+            <a href="https://www.nets.com.sg/faqs/business/enets-qr/">eNETS QR</a>  |  <a href="https://www.nets.com.sg/faqs/business/enets-credit/ ">eNETS Credit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>

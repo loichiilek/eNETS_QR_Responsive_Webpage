@@ -12,7 +12,6 @@ $(document).ready(function() {
     var urlOrder = '';
     var urlQuery = '';
     var dt = new Date();
-    // var transaction_time = "" + dt.getHours() + dt.getMinutes() + dt.getSeconds();
     var transaction_time = moment().format('hhmmss');
     var transaction_date = moment().format('MMDD');
 
@@ -49,11 +48,15 @@ $(document).ready(function() {
         console.log(result);
         json_result = jQuery.parseJSON(result)
         qrCode = json_result.txn_identifier;
-        $('#payment_image').html('<img class="hidden-xs" height="180" width="180" src="data:image/png;base64,' + json_result.qr_code + '" /> <a href="netspay://payment/?source=com.nets.netspay&amp;urlscheme=netspay&amp;qrdata=' + encodeURIComponent(qrCode) + '"> <img class="hidden-md hidden-lg height="180" width="180" " src="./assets/images/netspay.png" /></a>');
+        $('#payment_image').html('<img id="netspay-mobile-link" class="hidden-xs" height="180" width="180" src="data:image/png;base64,' + json_result.qr_code + '" /> <a href="netspay://payment/?source=com.nets.netspay&amp;urlscheme=netspay&amp;qrdata=' + encodeURIComponent(qrCode) + '"> <img class="hidden-md hidden-lg height="180" width="180" " src="./assets/images/netspay.png" /></a>');
         setTimeout(function() {
           query_function();
-        }, 10000);
-
+        }, 3000);
+        $("#netspay-mobile-link").on('load', function() {
+          $('html,body').animate({
+          scrollTop: $("#payment_image").offset().top},
+          '2500');
+        });
       },
       error: function(result) {
         alert(result);
@@ -93,7 +96,7 @@ $(document).ready(function() {
           }
         },
         error: function(result) {
-          alert('error');
+          // alert('error');
         }
       });
     });

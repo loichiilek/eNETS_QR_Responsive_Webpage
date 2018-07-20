@@ -3,71 +3,92 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home</title>
+  <title>HMAC</title>
   <!-- style -->
   <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+  <!-- script -->
+  <script src="assets/js/jquery-1.12.4.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/sha256.js"></script>
 </head>
 
 <body>
-  <div class="container">
-    <div>
-      <header>
-        <ul class="nav nav-tabs">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="nps.html">NPS</a></li>
-          <li><a href="soapi.html">SOAPI</a></li>
-          <li class="active"><a href="hmac.html">HMAC</a></li>
-        </ul>
-        <h1 class="hidden-xs">HMAC Calculator</h1>
-        <h3 class="visible-xs">HMAC Calculator</h3>
-      </header>
-      <div class="data-input">
-        <table class="table table-condensed" align="center">
-          <thead>
-            <tr>
-              <th>Fields</th>
-              <th>Input</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><label>Payload </label></td>
-              <td><textarea class="form-control" rows="8" id="txnreq">{"ss":"1","msg":{"netsMid":"UMID_877772003","tid":"","submissionMode":"B","txnAmount":"1000","merchantTxnRef":"20180719 04:12:48","merchantTxnDtm":"20180719 04:12:48.672","paymentType":"SALE","currencyCode":"SGD","paymentMode":"","merchantTimeZone":"+8:00","b2sTxnEndURL":"https://httpbin.org/post","b2sTxnEndURLParam":"","s2sTxnEndURL":"https://sit2.enets.sg/MerchantApp/rest/s2sTxnEnd","s2sTxnEndURLParam":"","clientType":"W","supMsg":"","netsMidIndicator":"U","ipAddress":"127.0.0.1","language":"en"}}</textarea></td>
-            </tr>
-            <tr>
-              <td><label>Secret Key </label></td>
-              <td><input class="form-control" type="text" size="40" id="secretKey" value="38a4b473-0295-439d-92e1-ad26a8c60279"></td>
-            </tr>
-            <tr>
-              <td><label>Signature  </label></td>
-              <td><input class="form-control" type="text" size="40" id="hmac"></td>
-            </tr>
-          </tbody>
-        </table>
+  <header>
+    <ul class="nav nav-tabs">
+      <li><a href="index.html">Home <i class="fa fa-home"></i></a></li>
+      <li><a href="nps.html">NPS <i class="fa fa-qrcode"></i></a></li>
+      <li><a href="soapi.html">SOAPI <i class="fa fa-credit-card"></i></a></li>
+      <li class="active"><a href="hmac.html">HMAC <i class="fa fa-key"></i></a></li>
+      <li class="nav-tabs-right"><a href="https://test.enets.sg/umapi/merchsim.html">UMAPI <i class="fa fa-external-link"></i></a></li>
+    </ul>
+  </header>
+  <div class="container-fluid">
+    <div class="container">
+      <h1 class="hidden-xs">HMAC Calculator</h1>
+      <h3 class="visible-xs">HMAC Calculator</h3>
+      <div>
+        <div class="data-input">
+          <table class="table table-condensed" align="center">
+            <thead>
+              <tr>
+                <th>Fields</th>
+                <th>Input</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><label>Payload </label></td>
+                <td><textarea class="form-control" rows="8" id="txnreq">{"ss":"1","msg":{"netsMid":"UMID_877772003","tid":"","submissionMode":"B","txnAmount":"1000","merchantTxnRef":"20180719 04:12:48","merchantTxnDtm":"20180719 04:12:48.672","paymentType":"SALE","currencyCode":"SGD","paymentMode":"","merchantTimeZone":"+8:00","b2sTxnEndURL":"https://httpbin.org/post","b2sTxnEndURLParam":"","s2sTxnEndURL":"https://sit2.enets.sg/MerchantApp/rest/s2sTxnEnd","s2sTxnEndURLParam":"","clientType":"W","supMsg":"","netsMidIndicator":"U","ipAddress":"127.0.0.1","language":"en"}}</textarea></td>
+              </tr>
+              <tr>
+                <td><label>Secret Key </label></td>
+                <td><input class="form-control" type="text" size="40" id="secretKey" value="38a4b473-0295-439d-92e1-ad26a8c60279"></td>
+              </tr>
+              <tr>
+                <td><label>Signature  </label></td>
+                <td><input class="form-control" type="text" size="40" id="hmac"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="container container-result">
+        <button class="btn btn-primary" align="center" onclick="calHMAC()">Generate HMAC</button>
+        <!-- The text field -->
+      </div>
+      <script type="text/javascript">
+        function calHMAC() {
+          var txnreq = $('#txnreq').val();
+          var secretKey = $('#secretKey').val();
+          console.log(txnreq+secretKey);
+          var sign = btoa(sha256(txnreq+secretKey).match(/\w{2}/g).map(a => String.fromCharCode(parseInt(a, 16))).join(''));
+          console.log(sign);
+          $('#hmac').val(sign);
+        }
+      </script>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4">
+          <div id="repository">
+            <a href="https://github.com/loichiilek/loichiilek.github.io">Project Repository <i class="fa fa-github"></i></a>
+          </div>
+
+        </div>
+        <div class="col-xs-8">
+          <div id="nets">
+            <a href="https://www.nets.com.sg/faqs/business/enets-qr/">eNETS QR</a>  |  <a href="https://www.nets.com.sg/faqs/business/enets-credit/ ">eNETS Credit</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="container container-result">
-      <button class="btn btn-primary" align="center" onclick="calHMAC()">Generate HMAC</button>
-      <!-- The text field -->
-    </div>
-
-    <script src="assets/js/jquery-1.12.4.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/sha256.js"></script>
-    <script type="text/javascript">
-      function calHMAC() {
-        var txnreq = $('#txnreq').val();
-        var secretKey = $('#secretKey').val();
-        console.log(txnreq+secretKey);
-        var sign = btoa(sha256(txnreq+secretKey).match(/\w{2}/g).map(a => String.fromCharCode(parseInt(a, 16))).join(''));
-        console.log(sign);
-        $('#hmac').val(sign);
-      }
-
-    </script>
-  </div>
+  </footer>
 </body>
 
 </html>

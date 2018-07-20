@@ -1,22 +1,72 @@
 body {
-  background: #f7fbff !important;
+  background: #fafbfc !important;
   font-family: 'Lato', sans-serif !important;
 }
 
 header {
   font-weight: bold !important;
   text-align: center !important;
-  margin: 30px auto !important;
 }
 
-header>h1{
+a {
+  color: #586069;
+  -webkit-transition: all 0.33s;
+  -moz-transition: all 0.33s;
+  -ms-transition: all 0.33s;
+  -o-transition: all 0.33s;
+  transition: all 0.33s;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.nav {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+  padding-top: 30px;
+  margin: 0 auto 0 auto !important;
+  border-bottom: none !important;
+}
+
+.nav{
+  text-align:right;
+}
+
+.nav>.nav-tabs-right {
+  display:inline-block;
+  float:none;
+}
+
+
+.container>h1{
   font-weight: bold;
   margin: 40px;
+  text-align: center;
 }
 
-header>h3{
+.container>h3{
   font-weight: bold;
   margin: 20px;
+  text-align: center;
+}
+
+body>.container-fluid {
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.nav-tabs>li>a:hover, .nav-tabs>li>a:focus{
+  background: #fdfdfe;
+  color: #586069;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  background: #fff;
 }
 
 #result_image>h4 {
@@ -100,4 +150,46 @@ header>h3{
 #hmac>#hmac-text {
   width: 70%;
   margin-right: 20px;
+}
+
+.footer {
+  border-top: 1px solid #ddd;
+  background-color: transparent;
+  min-height: 30px;
+}
+
+
+#repository {
+    color: #fff;
+    font-weight: bold;
+    line-height: 30px;
+    min-height: 30px;
+    margin: 10px 15px;
+}
+
+#nets {
+    font-weight: bold;
+    line-height: 30px;
+    min-height: 30px;
+    margin: 10px 15px;
+    text-align: right;
+}
+
+
+@media (min-width: 768px){
+  .nav {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .nav {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav {
+    width: 1170px;
+  }
 }
