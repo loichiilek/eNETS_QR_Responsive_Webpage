@@ -72,11 +72,9 @@ a:hover {
 
 h6>a {
   font-weight: bold;
+  color: #337ab7;
 }
 
-h6>a:hover {
-  text-decoration: underline;
-}
 
 body>.container-fluid {
   border-top: 1px solid #ddd;
@@ -198,6 +196,35 @@ body>.container-fluid {
     min-height: 30px;
     margin: 10px 15px;
     text-align: right;
+}
+
+#nets>a{
+  color: #337ab7;
+}
+
+#read-me>h4 {
+  font-weight: bold;
+  color: #555;
+}
+
+
+#mobile-external-link>h4 {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+#mobile-external-link>.row>div {
+  margin: 5px auto;
+}
+
+#mobile-external-link>.row>div>a {
+  margin: auto;
+  font-weight: bold;
+  color: #337ab7;
 }
 
 
