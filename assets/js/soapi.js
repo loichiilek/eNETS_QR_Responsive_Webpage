@@ -84,6 +84,7 @@ $(document).ready(function() {
     }
 
     $(this).hide();
+    $('#soapi-time').hide();
 
   });
 });

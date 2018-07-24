@@ -233,6 +233,13 @@ body>.container-fluid {
   color: #337ab7;
 }
 
+#soapi-time>p {
+  color: #888;
+  font-size: 9px;
+  text-align: center;
+  font-style: italic;
+}
+
 
 @media (min-width: 768px){
   .nav {
