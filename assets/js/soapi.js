@@ -45,7 +45,9 @@ $(document).ready(function() {
 
     console.log(data+apiSecret);
 
-    var sign = btoa(sha256(data+apiSecret).match(/\w{2}/g).map(a => String.fromCharCode(parseInt(a, 16))).join(''));
+    var sign = btoa(sha256(data + apiSecret).match(/\w{2}/g).map(function (a) {
+      return String.fromCharCode(parseInt(a, 16));
+    }).join(''));
 
     console.log(sign);
 

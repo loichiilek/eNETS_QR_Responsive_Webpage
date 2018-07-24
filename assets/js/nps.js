@@ -28,8 +28,9 @@ $(document).ready(function() {
 
     var data = JSON.stringify({"mti":"0200","process_code":"990000","amount":amount,"stan":stan,"transaction_time":transaction_time,"transaction_date":transaction_date,"entry_mode":"000","condition_code":"85","institution_code":"20000000001","host_tid":tid,"host_mid":mid,"npx_data":{"E103":tid,"E201":"00000123","E202":"SGD"},"communication_data":[{"type":"http","category":"URL","destination":"https://your-domain-name:8801/demo/order/notification","addon":{"external_API_keyID":"8bc63cde-2647-4a78-ac75-d5f534b56047"}}],"getQRCode":"Y"});
 
-
-    var sign = btoa(sha256(data+apiSecret).match(/\w{2}/g).map(a => String.fromCharCode(parseInt(a, 16))).join(''));
+    var sign = btoa(sha256(data + apiSecret).match(/\w{2}/g).map(function (a) {
+      return String.fromCharCode(parseInt(a, 16));
+    }).join(''));
 
     $.ajax({
       type: 'POST',
@@ -66,7 +67,11 @@ $(document).ready(function() {
     var inquiryCount = 1;
 
     data2 = JSON.stringify({"mti":"0100","process_code":"330000","stan":stan,"transaction_time":transaction_time,"transaction_date":transaction_date,"entry_mode":"000","condition_code":"85","institution_code":"20000000001","host_tid":tid,"host_mid":mid,"npx_data":{"E103":tid,"E201":"00000123","E202":"SGD"},"txn_identifier":qrCode});
-    sign = btoa(sha256(data2+apiSecret).match(/\w{2}/g).map(a => String.fromCharCode(parseInt(a, 16))).join(''));
+
+    sign = btoa(sha256(data2 + apiSecret).match(/\w{2}/g).map(function (a) {
+      return String.fromCharCode(parseInt(a, 16));
+    }).join(''));
+
     query_function = (function() {
       $.ajax({
         type: "POST",
