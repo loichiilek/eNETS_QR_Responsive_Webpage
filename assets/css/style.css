@@ -27,6 +27,10 @@ a:hover {
   font-weight: bold !important;
 }
 
+#radioBtn>a:hover {
+  font-weight: 400 !important;
+}
+
 .nav {
   padding-right: 15px;
   padding-left: 15px;
@@ -89,6 +93,8 @@ body>.container-fluid {
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
   background: #fff;
   color: #000;
+  margin-bottom: -2px;
+  border-bottom: 2px solid white;
 }
 
 #result_image>h4 {
