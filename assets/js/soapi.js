@@ -41,7 +41,7 @@ $(document).ready(function() {
       };
       hostedURL = 'https://www2.enets.sg/GW2/TxnReqListenerToHost';
     }
-    var data = JSON.stringify({"ss":"1","msg":{"netsMid":umid,"tid":"","submissionMode":"B","txnAmount":amount,"merchantTxnRef":merchantTxnRef,"merchantTxnDtm":merchantTxnDtm,"paymentType":"SALE","currencyCode":"SGD","paymentMode":"","merchantTimeZone":"+8:00","b2sTxnEndURL":"https://httpbin.org/post","b2sTxnEndURLParam":"","s2sTxnEndURL":"https://sit2.enets.sg/MerchantApp/rest/s2sTxnEnd","s2sTxnEndURLParam":"","clientType":"W","supMsg":"","netsMidIndicator":"U","ipAddress":"127.0.0.1","language":"en"}});
+    var data = JSON.stringify({"ss":"1","msg":{"netsMid":umid,"tid":"","submissionMode":"B","txnAmount":amount,"merchantTxnRef":merchantTxnRef,"merchantTxnDtm":merchantTxnDtm,"paymentType":"SALE","currencyCode":"SGD","paymentMode":"","merchantTimeZone":"+8:00","b2sTxnEndURL":"https://httpbin.org/post","b2sTxnEndURLParam":"","s2sTxnEndURL":"http://s2s-parser.requestcatcher.com/test","s2sTxnEndURLParam":"","clientType":"W","supMsg":"","netsMidIndicator":"U","ipAddress":"127.0.0.1","language":"en"}});
 
     console.log(data+apiSecret);
 
