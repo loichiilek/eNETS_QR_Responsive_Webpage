@@ -83,8 +83,25 @@ $(document).ready(function() {
 
     }
 
+    waitForElement("#qr_image", function(){
+      var str = $('#qr_image img').attr('src');
+      console.log($('#qr_image img').attr('src'));
+      console.log(str.substring(45));
+      $('#netspay_image').html('<a href="netspay://payment/?source=com.nets.netspay&amp;urlscheme=netspay&amp;qrdata=' + str.substring(45) + '"> <img class="hidden-md hidden-lg height="180" width="180" " src="./assets/images/netspay.png" /></a>');
+    });
+
     $(this).hide();
     $('#soapi-time').hide();
 
   });
 });
+
+function waitForElement(elementPath, callBack){
+  window.setTimeout(function(){
+    if($(elementPath).length){
+      callBack(elementPath, $(elementPath));
+    }else{
+      waitForElement(elementPath, callBack);
+    }
+  },500)
+}
