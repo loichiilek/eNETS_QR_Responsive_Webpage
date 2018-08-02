@@ -1,5 +1,10 @@
 $(document).ready(function() {
   $('#mode').prop('value', 'UAT');
+  $('.form-control').keyup(function(event) {
+      if (event.keyCode === 13) {
+          $('button').click();
+      }
+  })
   $('#open-with').prop('value', 'Current');
   $('button').click(function() {
     var continueFlag = true;

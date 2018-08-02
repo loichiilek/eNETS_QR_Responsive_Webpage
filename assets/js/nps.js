@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  $('.form-control').keyup(function(event) {
+      if (event.keyCode === 13) {
+          $('button').click();
+      }
+  });
   $('#mode').prop('value', 'UAT');
   $('button').click(function() {
     var continueFlag = true;
