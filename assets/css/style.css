@@ -181,6 +181,16 @@ body>.container-fluid {
   margin-right: 20px;
 }
 
+#netspay_image {
+  margin-bottom: 30px;
+}
+
+#netspay_image>h4 {
+  font-weight: bold;
+  font-size: 15px;
+  color: #333;
+}
+
 .footer {
   border-top: 1px solid #ddd;
   background-color: transparent;
