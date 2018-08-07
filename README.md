@@ -1,5 +1,4 @@
 # eNETS_QR_Responsive_Webpage
-Responsive Web Demo
 
 This interactive site was created to demostrate the function of each of the eNETS API. The code can be used as reference, but **should not** be copied line for line. The decrepencies lie in the lack of a backend implementation where secret key and other confidential information should be stored and processed. For a comprehensive integration guide, please visit our [developer's portal](https://api-developer.nets.com.sg/). 
 
@@ -16,3 +15,9 @@ This interactive site was created to demostrate the function of each of the eNET
 **3. HMAC**
 - Checks your signature for you.
 - Suitable for both NPS and SOAPI.
+
+
+## Built With
+
+* bootstrap
+* jquery
