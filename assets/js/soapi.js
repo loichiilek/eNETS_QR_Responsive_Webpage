@@ -92,7 +92,7 @@ $(document).ready(function() {
       var str = $('#qr_image img').attr('src');
       console.log($('#qr_image img').attr('src'));
       console.log(str.substring(45));
-      $('#netspay_image').html('<a href="netspay://payment/?source=com.nets.netspay&amp;urlscheme=netspay&amp;qrdata=' + str.substring(45) + '"> <img class="hidden-md hidden-lg" height="180" width="180" " src="./assets/images/netspay.png" /></a><h4>Click To Pay!</h4>');
+      $('#netspay_image').html('<a href="netspay://payment/?source=com.nets.netspay&amp;urlscheme=https://httpbin.org/get&amp;qrdata=' + str.substring(45) + '"> <img class="hidden-md hidden-lg" height="180" width="180" " src="./assets/images/netspay.png" /></a><h4>Click To Pay!</h4>');
       $('.payment-section').toggleClass('hidden-xs hidden-sm')
     });
 
